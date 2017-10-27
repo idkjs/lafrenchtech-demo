@@ -1,0 +1,35 @@
+{
+  "name": "lafrenchtech-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-relay": "^1.4.1",
+    "react-scripts": "1.0.14",
+    "relay-runtime": "^1.4.1",
+    "styled-components": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-plugin-relay": "^1.4.1",
+    "graphql-cli": "^1.1.0",
+    "relay-compiler": "^1.4.1"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "flow"
+    ]
+  },
+  "scripts": {
+    "build": "node ./setup && react-scripts build",
+    "test": "node ./setup && react-scripts test --env=jsdom",
+    "start": "node ./setup && react-scripts start",
+    "schema": "graphql get-schema prod",
+    "relay": "relay-compiler --src ./src --schema ./src/schema.graphql",
+    "eject": "react-scripts eject"
+  }
+}

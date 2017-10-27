@@ -1,0 +1,88 @@
+type Company implements Node {
+  id: ID!
+  name: String
+  logo: String
+  employees: String
+  tranch: String
+  description: String
+  location: String
+  address: String
+  url: String
+  jobs: String
+  sector: String
+}
+
+# A connection to a list of items.
+type CompanyConnection {
+  # A list of edges.
+  edges: [CompanyEdge]
+
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+}
+
+# An edge in a connection.
+type CompanyEdge {
+  # A cursor for use in pagination.
+  cursor: String!
+
+  # The item at the end of the edge
+  node: Company
+}
+
+input CompanyFilter {
+  OR: [CompanyFilter!]
+  description_contains: String
+  url_contains: String
+}
+
+# An object with an ID
+interface Node {
+  # The id of the object.
+  id: ID!
+}
+
+# Information about pagination in a connection.'
+type PageInfo {
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean!
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean!
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+}
+
+type Query {
+  companies(
+    # Returns the first n elements from the list.
+    first: Int
+
+    # Returns the elements in the list that come after the specified cursor.
+    after: String
+
+    # Returns the last n elements from the list.
+    last: Int
+
+    # Returns the elements in the list that come before the specified cursor.
+    before: String
+    filter: CompanyFilter
+  ): CompanyConnection
+
+  # Fetches an object given its ID
+  node(
+    # The ID of an object
+    id: ID!
+  ): Node
+
+  # Fetches objects given their IDs
+  nodes(
+    # The IDs of objects
+    ids: [ID!]!
+  ): [Node]!
+}
+
