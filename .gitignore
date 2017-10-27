@@ -4,3 +4,4 @@ lafrenchtech-server/.gitignore
 lafrenchtech-client/.gitignore
 deploy.md
 lafrenchtech-client/deploy.md
+.DS_Store
