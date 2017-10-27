@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ListPage from "./ListPage";
 import environment from "../Environment";
 import { mainColor, Title } from "./Styles";
+import Corner from "./Corner";
 
 const AppListPageQuery = graphql`
   query AppListPageQuery {
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className={this.props.className}>
+        <Corner />
         <Title color={mainColor} href={"http://visa.lafrenchtech.com"}>
           LaFrenchTech
         </Title>
