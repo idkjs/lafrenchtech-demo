@@ -1,12 +1,27 @@
 import React, { Component } from "react";
 import { createFragmentContainer, graphql } from "react-relay";
-import { ThumbnailA, Thumbnail } from "./Styles";
+
+import {
+  Card,
+  Border,
+  Box,
+  BackgroundImage,
+  Subhead,
+  Small,
+  Link
+} from "rebass";
 class Company extends Component {
   render() {
     return (
-      <ThumbnailA href={this.props.company.url}>
-        <Thumbnail src={this.props.company.logo} />
-      </ThumbnailA>
+      <Card width={256}>
+        <Border py={2} top bottom>
+          <BackgroundImage ratio={1} src={this.props.company.logo} />
+          <Box p={2}>
+            <Link href={this.props.company.url}>{this.props.company.name}</Link>
+            <Small>Small meta text</Small>
+          </Box>
+        </Border>
+      </Card>
     );
   }
 }
