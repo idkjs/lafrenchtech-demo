@@ -1,7 +1,27 @@
 {
   "name": "lafrenchtech-client",
   "version": "0.1.0",
-  "private": true,
+  "description":
+    "Relayjs, Graphql, Dockerized Apps, Multistage Docker Builds, Azure CosmosDB with MongoDB Driver, Nginx Server on Client, Deployments of Docker on Azure from Azure CLI, Create-React-App behind Nginx and a bunch of other stuff I have no business knowing",
+  "keywords": [
+    "relayjs",
+    "graphql",
+    "create-react-app",
+    "Docker",
+    "multi-stage",
+    "azure",
+    "cosmosdb",
+    "mongodb",
+    "deployment",
+    "azure-cli",
+    "styled-components",
+    "nginx"
+  ],
+  "repository": "https://github.com/idkjs/lafrenchtech-demo.git",
+  "author": {
+    "name": "Alain Armand <aarmand.inbox@gmail.com",
+    "url": "http://github.com/idkjs"
+  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -20,6 +40,7 @@
     "babel-plugin-relay": "^1.4.1",
     "graphql-cli": "^1.1.0",
     "jest-styled-components": "^4.9.0",
+    "react-app-rewired": "^1.3.3",
     "relay-compiler": "^1.4.1",
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^17.0.0",
@@ -30,9 +51,9 @@
     "presets": ["env", "flow"]
   },
   "scripts": {
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "schema": "graphql get-schema prod",
     "relay": "relay-compiler --src ./src --schema ./src/schema.graphql",
     "eject": "react-scripts eject",
