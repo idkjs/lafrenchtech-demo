@@ -30,9 +30,9 @@
     "presets": ["env", "flow"]
   },
   "scripts": {
-    "build": "node ./setup && react-scripts build",
-    "test": "node ./setup && react-scripts test --env=jsdom",
-    "start": "node ./setup && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "start": "react-scripts start",
     "schema": "graphql get-schema prod",
     "relay": "relay-compiler --src ./src --schema ./src/schema.graphql",
     "eject": "react-scripts eject",
