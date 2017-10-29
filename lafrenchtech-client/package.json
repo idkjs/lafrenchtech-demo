@@ -27,10 +27,7 @@
     "stylelint-processor-styled-components": "^1.0.0"
   },
   "babel": {
-    "presets": [
-      "env",
-      "flow"
-    ]
+    "presets": ["env", "flow"]
   },
   "scripts": {
     "build": "node ./setup && react-scripts build",
@@ -38,6 +35,7 @@
     "start": "node ./setup && react-scripts start",
     "schema": "graphql get-schema prod",
     "relay": "relay-compiler --src ./src --schema ./src/schema.graphql",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint:css": "stylelint './src/**/*.js'"
   }
 }
