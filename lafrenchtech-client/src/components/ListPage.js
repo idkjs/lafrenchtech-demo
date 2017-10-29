@@ -10,7 +10,11 @@ class ListPage extends Component {
     return (
       <div className="bold">
         <PageTitle p={4}>
-          {this.props.companies.edges.length} Companies
+          {this.props.companies.edges.length}{" "}
+          <a href={"http://http://visa.lafrenchtech.com/"}>
+            FrenchTechVisa
+          </a>{" "}
+          Companies
         </PageTitle>
         <Flex wrap>
           {this.props.companies.edges.map(({ node }, index) => (

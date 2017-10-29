@@ -9,7 +9,9 @@ class Company extends Component {
       <Box p={3} width={[1, 1 / 2, 1 / 3]}>
         <Image src={this.props.company.logo} />
         <Divider color="black" />
-        <Link href={this.props.company.url}>{this.props.company.name}</Link>
+        <Link href={this.props.company.url} target="_blank">
+          {this.props.company.name}
+        </Link>
         <Divider color="black" />
       </Box>
     );

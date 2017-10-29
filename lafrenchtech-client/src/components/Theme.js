@@ -1,5 +1,5 @@
-import {theme} from 'rebass';
+import { theme } from "rebass";
 
-const customTheme = {font:'"Comic Sans MS", cursive, sans-serif'};
+const customTheme = { font: "monserrat" };
 
 export default Object.assign(theme, customTheme);
