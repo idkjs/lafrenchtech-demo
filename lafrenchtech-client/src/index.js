@@ -15,13 +15,8 @@ ReactDOM.render(<App />, document.getElementById("root"));
 //   margin: 0;
 // }
 // `;
-injectGlobal([], {
-  "*": {
-    boxSizing: "border-box"
-  },
-  body: {
-    lineHeight: 1.5,
-    margin: 0
-  }
-});
+injectGlobal`
+* { box-sizing: border-box; }
+body { margin: 0; }
+`;
 registerServiceWorker();

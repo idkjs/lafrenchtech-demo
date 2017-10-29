@@ -15,7 +15,7 @@ const AppListPageQuery = graphql`
 class App extends Component {
   render() {
     return (
-      <div className={this.props.className}>
+      <div>
         <Corner />
         <QueryRenderer
           environment={environment}
