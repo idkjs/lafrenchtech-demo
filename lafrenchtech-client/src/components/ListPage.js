@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { createFragmentContainer, graphql } from "react-relay";
-import { Flex, Box, Card } from "rebass";
+import { Flex } from "rebass";
 import PageTitle from "./PageTitle";
 import Company from "./Company";
 
@@ -9,7 +9,7 @@ class ListPage extends Component {
     // console.log(this.props.companies);
     return (
       <div className="bold">
-        <PageTitle p={4}>
+        <PageTitle>
           {this.props.companies.edges.length}{" "}
           <a href={"http://http://visa.lafrenchtech.com/"}>
             FrenchTechVisa

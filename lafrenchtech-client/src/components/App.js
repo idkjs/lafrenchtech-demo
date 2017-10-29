@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import theme from "./Theme";
-import { Provider, Heading, Text } from "rebass";
-import { Card } from "./UI";
+import { Provider } from "rebass";
 import { QueryRenderer, graphql } from "react-relay";
 import ListPage from "./ListPage";
 import environment from "../Environment";

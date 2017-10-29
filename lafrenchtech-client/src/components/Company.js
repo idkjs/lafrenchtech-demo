@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { createFragmentContainer, graphql } from "react-relay";
 
-import { Flex, Card, Divider, Box, Grid, Image, Link } from "rebass";
+import { Divider, Box, Image, Link } from "rebass";
 
 class Company extends Component {
   render() {
