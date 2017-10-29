@@ -22,9 +22,5 @@
     "url": "http://github.com/idkjs"
   },
   "license": "MIT",
-  "dependencies": {
-    "react-live": "^1.7.1",
-    "rebass": "^1.0.4",
-    "rrx": "^1.0.0-3"
-  }
+  "dependencies": {}
 }
