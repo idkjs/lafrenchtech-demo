@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import theme from "./Theme";
-import { Provider } from "rebass";
+// import theme from "./Theme";
+import { Provider, Base, Heading, Space, Toolbar, Text } from "rebass";
+import BurgerMenu from "./BurgerMenu";
+import UserDrop from "./UserDrop";
 import { QueryRenderer, graphql } from "react-relay";
 import ListPage from "./ListPage";
 import environment from "../Environment";
@@ -16,7 +18,12 @@ const AppListPageQuery = graphql`
 class App extends Component {
   render() {
     return (
-      <Provider theme={theme}>
+      <Provider
+        theme={{
+          font: '"Avenir Next", Helvetica, sans-serif',
+          fontSizes: [12, 16, 24, 36, 48, 72]
+        }}
+      >
         <Corner />
         <QueryRenderer
           environment={environment}

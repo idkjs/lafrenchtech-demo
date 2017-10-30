@@ -1,8 +1,7 @@
 {
   "name": "lafrenchtech-client",
   "version": "0.1.0",
-  "description":
-    "Relayjs, Graphql, Dockerized Apps, Multistage Docker Builds, Azure CosmosDB with MongoDB Driver, Nginx Server on Client, Deployments of Docker on Azure from Azure CLI, Create-React-App behind Nginx and a bunch of other stuff I have no business knowing",
+  "description": "Relayjs, Graphql, Dockerized Apps, Multistage Docker Builds, Azure CosmosDB with MongoDB Driver, Nginx Server on Client, Deployments of Docker on Azure from Azure CLI, Create-React-App behind Nginx and a bunch of other stuff I have no business knowing",
   "keywords": [
     "relayjs",
     "graphql",
@@ -33,7 +32,10 @@
     "react-relay": "^1.4.1",
     "react-scripts": "1.0.14",
     "rebass": "^1.0.4",
+    "recompose": "^0.26.0",
+    "recompose-relay-modern": "^0.2.5",
     "relay-runtime": "^1.4.1",
+    "reline": "^1.0.0-beta.3",
     "styled-components": "^2.2.1"
   },
   "devDependencies": {
@@ -48,7 +50,10 @@
     "stylelint-processor-styled-components": "^1.0.0"
   },
   "babel": {
-    "presets": ["env", "flow"]
+    "presets": [
+      "env",
+      "flow"
+    ]
   },
   "scripts": {
     "start": "react-app-rewired start",

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { createFragmentContainer, graphql } from "react-relay";
-import { Flex } from "rebass";
-import PageTitle from "./PageTitle";
+import { Flex, Heading } from "rebass";
 import Company from "./Company";
 
 class ListPage extends Component {
@@ -9,13 +8,13 @@ class ListPage extends Component {
     // console.log(this.props.companies);
     return (
       <div className="bold">
-        <PageTitle>
+        <Heading f={[2, 3, 4, 5]}>
           {this.props.companies.edges.length}{" "}
           <a href={"http://http://visa.lafrenchtech.com/"}>
             FrenchTechVisa
           </a>{" "}
           Companies
-        </PageTitle>
+        </Heading>
         <Flex wrap>
           {this.props.companies.edges.map(({ node }, index) => (
             <Company key={node.__id} index={index} company={node} />
