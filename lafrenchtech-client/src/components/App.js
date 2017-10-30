@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import { Provider, Base, Heading, NavLink, Toolbar, Text } from "rebass";
+import { Provider, Banner, Heading } from "rebass";
 import { QueryRenderer, graphql } from "react-relay";
 import ListPage from "./ListPage";
 import environment from "../Environment";
-// import Corner from "./Corner";
-import { createRouter, createView, Link } from "rrx";
+import { createRouter } from "rrx";
 import NavBar from "./NavBar";
 
 const AppListPageQuery = graphql`
@@ -15,12 +14,13 @@ const AppListPageQuery = graphql`
   }
 `;
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
       <Provider
         theme={{
-          font: '"Avenir Next", Helvetica, sans-serif',
+          font: "-apple-system, BlinkMacSystemFont, sans-serif",
+          monospace: '"SF Mono", "Roboto Mono", Menlo, monospace',
           fontSizes: [12, 16, 24, 36, 48, 72]
         }}
       >

@@ -1,20 +1,13 @@
 import React, { Component } from "react";
 import { createFragmentContainer, graphql } from "react-relay";
-import { Flex, Heading } from "rebass";
+import { Flex, Heading, Lead } from "rebass";
 import Company from "./Company";
 
 class ListPage extends Component {
   render() {
     // console.log(this.props.companies);
     return (
-      <div className="bold">
-        <Heading f={[2, 3, 4, 5]}>
-          {this.props.companies.edges.length}{" "}
-          <a href={"http://http://visa.lafrenchtech.com/"} target="_blank">
-            FrenchTechVisa
-          </a>{" "}
-          Companies
-        </Heading>
+      <div>
         <Flex wrap>
           {this.props.companies.edges.map(({ node }, index) => (
             <Company key={node.__id} index={index} company={node} />

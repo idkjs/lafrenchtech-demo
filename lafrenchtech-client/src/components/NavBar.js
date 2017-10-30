@@ -15,13 +15,6 @@ const NavBar = props => (
       <Hide xs>
         <NavLink
           target="_blank"
-          href="https://lafrenchtech.azurewebsites.net"
-          children="Demo"
-        />
-      </Hide>
-      <Hide xs>
-        <NavLink
-          target="_blank"
           href="https://github.com/idkjs/lafrenchtech-demo"
           children="Github"
         />
@@ -29,7 +22,14 @@ const NavBar = props => (
       <Hide xs>
         <NavLink
           target="_blank"
-          href="https://lagraphql.azurewebsites.net"
+          href="https://lafrenchtech.azurewebsites.net"
+          children="Demo"
+        />
+      </Hide>
+      <Hide xs>
+        <NavLink
+          target="_blank"
+          href="https://lagraphql.azurewebsites.net/graphiql"
           children="LaGraphQL"
         />
       </Hide>
