@@ -1,33 +1,46 @@
 import React from "react";
-import { Link } from "rrx";
+// import { Link } from "rrx";
 import { Absolute, Toolbar, Box, NavLink, BlockLink, Image } from "rebass";
 import Hide from "hidden-styled";
 import Tweet from "./Tweet";
 
 const NavBar = props => (
   <Absolute z={2} top left right>
-    <Toolbar bg="transparent" {...props}>
-      <NavLink is={Link} href="/" children="Rebass" />
+    <Toolbar bg="black" {...props}>
+      <NavLink
+        target="_blank"
+        href="https://visa.lafrenchtech.com"
+        children="LaFrenchTech"
+      />
       <Hide xs>
-        <NavLink href="https://github.com/jxnblk/rebass" children="GitHub" />
+        <NavLink
+          target="_blank"
+          href="https://lafrenchtech.azurewebsites.net"
+          children="Demo"
+        />
       </Hide>
       <Hide xs>
-        <NavLink is={Link} href="/getting-started" children="Docs" />
+        <NavLink
+          target="_blank"
+          href="https://github.com/idkjs/lafrenchtech-demo"
+          children="Github"
+        />
+      </Hide>
+      <Hide xs>
+        <NavLink
+          target="_blank"
+          href="https://lagraphql.azurewebsites.net"
+          children="LaGraphQL"
+        />
       </Hide>
       <Box mx="auto" />
       <Tweet />
-      <Hide xs>
-        <BlockLink
-          ml={3}
-          mr={2}
-          py={2}
-          href="https://travis-ci.org/jxnblk/rebass"
-        >
-          <Image src="https://img.shields.io/travis/jxnblk/rebass/master.svg" />
-        </BlockLink>
-      </Hide>
-      <BlockLink mx={2} py={2} href="https://github.com/jxnblk/rebass">
-        <Image src="https://img.shields.io/github/stars/jxnblk/rebass.svg?style=social&label=Star" />
+      <BlockLink
+        mx={2}
+        py={2}
+        href="https://github.com/idkjs/lafrenchtech-demo"
+      >
+        <Image src="https://img.shields.io/github/stars/idkjs/lafrenchtech-demo.svg?style=social&label=Star" />
       </BlockLink>
     </Toolbar>
   </Absolute>

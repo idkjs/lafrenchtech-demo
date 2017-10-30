@@ -10,7 +10,7 @@ class ListPage extends Component {
       <div className="bold">
         <Heading f={[2, 3, 4, 5]}>
           {this.props.companies.edges.length}{" "}
-          <a href={"http://http://visa.lafrenchtech.com/"}>
+          <a href={"http://http://visa.lafrenchtech.com/"} target="_blank">
             FrenchTechVisa
           </a>{" "}
           Companies
