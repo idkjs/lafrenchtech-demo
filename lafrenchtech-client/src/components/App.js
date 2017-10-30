@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import theme from "./Theme";
 import { Provider, Base, Heading, NavLink, Toolbar, Text } from "rebass";
 import BurgerMenu from "./BurgerMenu";
 import UserDrop from "./UserDrop";
@@ -11,6 +10,7 @@ import { createRouter, createView, Link } from "rrx";
 import Index from "./Index";
 import About from "./About";
 import Post from "./Post";
+import NavBar from "./NavBar";
 
 const AppListPageQuery = graphql`
   query AppListPageQuery {
@@ -35,33 +35,26 @@ class App extends React.Component {
         }}
       >
         <Corner />
+        <NavBar />
         <Toolbar>
-          <NavLink>
-            <a href={"http://http://visa.lafrenchtech.com/"}>
+          <nav>
+            <a href={"http://visa.lafrenchtech.com/"} target="_blank">
               Work In France
             </a>{" "}
-          </NavLink>
-          <NavLink ml="auto">
+            <a
+              href={"https://github.com/idkjs/lafrenchtech-demo"}
+              target="_blank"
+            >
+              Github
+            </a>{" "}
             <Link href="/">Home</Link>
-          </NavLink>
-          <NavLink>
+            <Link href="/posts/hello">Hello Post</Link>
+            <Link href="/posts/two">Post Two</Link>
             <Link href="/about">About</Link>
-          </NavLink>
+            <Link href="/contact">Contact</Link>
+          </nav>
         </Toolbar>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/about">About</Link>
-              </li>
-              <li>
-                <Link href="/posts/hello">Hello Post</Link>
-              </li>
-            </ul>
-          </nav>
           <Index pattern="/" />
           <About pattern="/about" />
           <Contact pattern="/contact" />
@@ -85,5 +78,3 @@ class App extends React.Component {
 }
 
 export default createRouter(App);
-
-// export default App;

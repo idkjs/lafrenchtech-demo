@@ -1,12 +1,14 @@
-import React from 'react'
-import { createView } from 'rrx'
-import Debug from './Debug'
+import React from "react";
+import { createView } from "rrx";
+import Debug from "./Debug";
+import Company from "./Company";
+import environment from "../Environment";
 
-const Post = (props) => (
+const Post = props => (
   <div>
-    <h1>{props.params.id}</h1>
+    <Company />
     <Debug {...props} />
   </div>
-)
+);
 
-export default createView(Post)
+export default createView(Post);

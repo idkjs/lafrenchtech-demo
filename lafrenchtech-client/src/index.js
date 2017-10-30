@@ -9,5 +9,8 @@ ReactDOM.render(<App />, document.getElementById("root"));
 injectGlobal`
 * { box-sizing: border-box; }
 body { margin: 0; }
+a:active {
+  color: red;
+}
 `;
 registerServiceWorker();

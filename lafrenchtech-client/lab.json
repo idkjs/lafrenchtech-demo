@@ -1,0 +1,15 @@
+{
+  "name": "lafrenchtech-client",
+  "library": "styled-components",
+  "components": [
+    {
+      "name": "Box",
+      "type": "div",
+      "props": {},
+      "style": {},
+      "examples": [
+        "<Box>Hello</Box>"
+      ]
+    }
+  ]
+}
