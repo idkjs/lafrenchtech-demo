@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 // import theme from "./Theme";
-import { Provider, Base, Heading, Space, Toolbar, Text } from "rebass";
+import { Provider, Base, Heading, NavLink, Toolbar, Text } from "rebass";
 import BurgerMenu from "./BurgerMenu";
 import UserDrop from "./UserDrop";
 import { QueryRenderer, graphql } from "react-relay";
 import ListPage from "./ListPage";
 import environment from "../Environment";
 import Corner from "./Corner";
+import { createRouter, createView, Link } from "rrx";
+import Index from "./Index";
+import About from "./About";
+import Post from "./Post";
 
 const AppListPageQuery = graphql`
   query AppListPageQuery {
@@ -15,7 +19,13 @@ const AppListPageQuery = graphql`
     }
   }
 `;
-class App extends Component {
+
+const Contact = createView(() => (
+  <div>
+    <h1>Contact</h1>
+  </div>
+));
+class App extends React.Component {
   render() {
     return (
       <Provider
@@ -25,6 +35,38 @@ class App extends Component {
         }}
       >
         <Corner />
+        <Toolbar>
+          <NavLink>
+            <a href={"http://http://visa.lafrenchtech.com/"}>
+              Work In France
+            </a>{" "}
+          </NavLink>
+          <NavLink ml="auto">
+            <Link href="/">Home</Link>
+          </NavLink>
+          <NavLink>
+            <Link href="/about">About</Link>
+          </NavLink>
+        </Toolbar>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="/posts/hello">Hello Post</Link>
+              </li>
+            </ul>
+          </nav>
+          <Index pattern="/" />
+          <About pattern="/about" />
+          <Contact pattern="/contact" />
+          <Post pattern="/posts/:id" foo="bar" />
+        </div>
         <QueryRenderer
           environment={environment}
           query={AppListPageQuery}
@@ -42,4 +84,6 @@ class App extends Component {
   }
 }
 
-export default App;
+export default createRouter(App);
+
+// export default App;
