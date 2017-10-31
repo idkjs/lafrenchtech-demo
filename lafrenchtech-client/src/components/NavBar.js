@@ -5,7 +5,7 @@ import Hide from "hidden-styled";
 import Tweet from "./Tweet";
 
 const NavBar = props => (
-  <Toolbar bg="black" {...props}>
+  <Toolbar bg="black" {...props} m={0}>
     <NavLink
       target="_blank"
       href="https://visa.lafrenchtech.com"

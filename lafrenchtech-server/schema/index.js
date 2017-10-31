@@ -95,6 +95,7 @@ const schema = makeExecutableSchema({
       description: obj => obj.Description,
       location: obj => obj.Location,
       address: obj => obj.Adresse,
+      sector: obj => obj.Sector,
       url: obj => obj.Company_Website,
       jobs: obj => obj.Job_Offers
     }

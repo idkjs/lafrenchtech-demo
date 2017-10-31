@@ -15,6 +15,7 @@ export type Company_company = {|
   +logo: ?string;
   +name: ?string;
   +tranch: ?string;
+  +sector: ?string;
 |};
 */
 
@@ -65,6 +66,13 @@ const fragment /*: ConcreteFragment*/ = {
       "alias": null,
       "args": null,
       "name": "tranch",
+      "storageKey": null
+    },
+    {
+      "kind": "ScalarField",
+      "alias": null,
+      "args": null,
+      "name": "sector",
       "storageKey": null
     }
   ],

@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 2be22be06af464e25bb23306d0262f64
+ * @relayHash 4eba83f6ff192d2052ad220ac0e5a13e
  */
 
 /* eslint-disable */
@@ -39,6 +39,7 @@ fragment Company_company on Company {
   logo
   name
   tranch
+  sector
 }
 */
 
@@ -150,6 +151,13 @@ const batch /*: ConcreteBatch*/ = {
                     "args": null,
                     "name": "tranch",
                     "storageKey": null
+                  },
+                  {
+                    "kind": "ScalarField",
+                    "alias": null,
+                    "args": null,
+                    "name": "sector",
+                    "storageKey": null
                   }
                 ],
                 "storageKey": null
@@ -162,7 +170,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppListPageQuery {\n  companies {\n    ...ListPage_companies\n  }\n}\n\nfragment ListPage_companies on CompanyConnection {\n  edges {\n    cursor\n    node {\n      id\n      ...Company_company\n    }\n  }\n}\n\nfragment Company_company on Company {\n  id\n  description\n  url\n  logo\n  name\n  tranch\n}\n"
+  "text": "query AppListPageQuery {\n  companies {\n    ...ListPage_companies\n  }\n}\n\nfragment ListPage_companies on CompanyConnection {\n  edges {\n    cursor\n    node {\n      id\n      ...Company_company\n    }\n  }\n}\n\nfragment Company_company on Company {\n  id\n  description\n  url\n  logo\n  name\n  tranch\n  sector\n}\n"
 };
 
 module.exports = batch;
