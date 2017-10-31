@@ -6,7 +6,7 @@ import environment from "../Environment";
 import { createRouter } from "rrx";
 
 const AppListPageQuery = graphql`
-  query AppListPageQuery($count: Int!, $sector_contains: String) {
+  query AppListPageQuery($sector_contains: String) {
     companies {
       ...ListPage_companies @arguments(sector_contains: $sector_contains)
     }

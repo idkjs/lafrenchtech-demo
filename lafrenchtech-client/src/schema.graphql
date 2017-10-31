@@ -1,5 +1,5 @@
 # source: http://localhost:4000/graphql
-# timestamp: Tue Oct 31 2017 16:01:13 GMT+0100 (CET)
+# timestamp: Tue Oct 31 2017 22:05:55 GMT+0100 (CET)
 
 type Company implements Node {
   id: ID!
@@ -12,7 +12,12 @@ type Company implements Node {
   address: String
   url: String
   jobs: String
+  jobs_link: String
   sector: String
+  twitter: String
+  facebook: String
+  instagram: String
+  youtube: String
 }
 
 # A connection to a list of items.

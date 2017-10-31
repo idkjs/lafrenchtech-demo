@@ -10,7 +10,6 @@
 import type {ConcreteFragment} from 'relay-runtime';
 export type ListPage_companies = {|
   +edges: ?$ReadOnlyArray<?{|
-    +cursor: string;
     +node: ?{|
       +id: string;
     |};
@@ -20,7 +19,20 @@ export type ListPage_companies = {|
 
 
 const fragment /*: ConcreteFragment*/ = {
-  "argumentDefinitions": [],
+  "argumentDefinitions": [
+    {
+      "kind": "LocalArgument",
+      "name": "sector_contains",
+      "type": "CompanyFilter",
+      "defaultValue": " "
+    },
+    {
+      "kind": "LocalArgument",
+      "name": "count",
+      "type": "Int",
+      "defaultValue": 10
+    }
+  ],
   "kind": "Fragment",
   "metadata": null,
   "name": "ListPage_companies",
@@ -33,13 +45,6 @@ const fragment /*: ConcreteFragment*/ = {
       "name": "edges",
       "plural": true,
       "selections": [
-        {
-          "kind": "ScalarField",
-          "alias": null,
-          "args": null,
-          "name": "cursor",
-          "storageKey": null
-        },
         {
           "kind": "LinkedField",
           "alias": null,

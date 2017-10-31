@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d405a7a530fe4b388a320ef7e401d2de
+ * @relayHash cc5ec4e8931ed33900edfe0953238b1d
  */
 
 /* eslint-disable */
@@ -9,22 +9,23 @@
 
 /*::
 import type {ConcreteBatch} from 'relay-runtime';
-export type AppListPageQueryResponse = {|
+export type ListPageRefetchQueryResponse = {|
   +companies: ?{| |};
 |};
 */
 
 
 /*
-query AppListPageQuery(
-  $sector_contains: String
+query ListPageRefetchQuery(
+  $count: Int
+  $filter: CompanyFilter
 ) {
   companies {
-    ...ListPage_companies_30DBNc
+    ...ListPage_companies_26eJ3g
   }
 }
 
-fragment ListPage_companies_30DBNc on CompanyConnection {
+fragment ListPage_companies_26eJ3g on CompanyConnection {
   edges {
     node {
       id
@@ -49,14 +50,20 @@ const batch /*: ConcreteBatch*/ = {
     "argumentDefinitions": [
       {
         "kind": "LocalArgument",
-        "name": "sector_contains",
-        "type": "String",
+        "name": "count",
+        "type": "Int",
+        "defaultValue": null
+      },
+      {
+        "kind": "LocalArgument",
+        "name": "filter",
+        "type": "CompanyFilter",
         "defaultValue": null
       }
     ],
     "kind": "Fragment",
     "metadata": null,
-    "name": "AppListPageQuery",
+    "name": "ListPageRefetchQuery",
     "selections": [
       {
         "kind": "LinkedField",
@@ -72,8 +79,14 @@ const batch /*: ConcreteBatch*/ = {
             "args": [
               {
                 "kind": "Variable",
-                "name": "sector_contains",
-                "variableName": "sector_contains",
+                "name": "count",
+                "variableName": "count",
+                "type": null
+              },
+              {
+                "kind": "Variable",
+                "name": "filter",
+                "variableName": "filter",
                 "type": null
               }
             ]
@@ -87,18 +100,24 @@ const batch /*: ConcreteBatch*/ = {
   "id": null,
   "kind": "Batch",
   "metadata": {},
-  "name": "AppListPageQuery",
+  "name": "ListPageRefetchQuery",
   "query": {
     "argumentDefinitions": [
       {
         "kind": "LocalArgument",
-        "name": "sector_contains",
-        "type": "String",
+        "name": "count",
+        "type": "Int",
+        "defaultValue": null
+      },
+      {
+        "kind": "LocalArgument",
+        "name": "filter",
+        "type": "CompanyFilter",
         "defaultValue": null
       }
     ],
     "kind": "Root",
-    "name": "AppListPageQuery",
+    "name": "ListPageRefetchQuery",
     "operation": "query",
     "selections": [
       {
@@ -185,7 +204,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppListPageQuery(\n  $sector_contains: String\n) {\n  companies {\n    ...ListPage_companies_30DBNc\n  }\n}\n\nfragment ListPage_companies_30DBNc on CompanyConnection {\n  edges {\n    node {\n      id\n      ...Company_company\n    }\n  }\n}\n\nfragment Company_company on Company {\n  id\n  description\n  url\n  logo\n  name\n  tranch\n  sector\n}\n"
+  "text": "query ListPageRefetchQuery(\n  $count: Int\n  $filter: CompanyFilter\n) {\n  companies {\n    ...ListPage_companies_26eJ3g\n  }\n}\n\nfragment ListPage_companies_26eJ3g on CompanyConnection {\n  edges {\n    node {\n      id\n      ...Company_company\n    }\n  }\n}\n\nfragment Company_company on Company {\n  id\n  description\n  url\n  logo\n  name\n  tranch\n  sector\n}\n"
 };
 
 module.exports = batch;
