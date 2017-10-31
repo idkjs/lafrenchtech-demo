@@ -1,25 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
+import { createView } from "rrx";
+
 import { createFragmentContainer, graphql } from "react-relay";
 import { Flex, Heading, Lead } from "rebass";
 import Company from "./Company";
 
-class ListPage extends Component {
-  render() {
-    // console.log(this.props.companies);
-    return (
-      <div>
-        <Flex wrap>
-          {this.props.companies.edges.map(({ node }, index) => (
-            <Company key={node.__id} index={index} company={node} />
-          ))}
-        </Flex>
-      </div>
-    );
-  }
-}
-
-ListPage = createFragmentContainer(ListPage, {
-  companies: graphql`
+const ListPage = createFragmentContainer(
+  props => (
+    <Flex wrap>
+      {props.companies.edges.map(({ node }, index) => (
+        <Company key={node.__id} index={index} company={node} />
+      ))}
+    </Flex>
+  ),
+  graphql`
     fragment ListPage_companies on CompanyConnection
       @connection(key: "ListPage_company") {
       edges {
@@ -31,5 +25,5 @@ ListPage = createFragmentContainer(ListPage, {
       }
     }
   `
-});
-export default ListPage;
+);
+export default createView(ListPage);
