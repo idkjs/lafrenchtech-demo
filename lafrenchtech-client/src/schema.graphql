@@ -1,3 +1,6 @@
+# source: http://localhost:4000/graphql
+# timestamp: Tue Oct 31 2017 16:01:13 GMT+0100 (CET)
+
 type Company implements Node {
   id: ID!
   name: String
@@ -33,7 +36,7 @@ type CompanyEdge {
 input CompanyFilter {
   OR: [CompanyFilter!]
   description_contains: String
-  url_contains: String
+  sector_contains: String
 }
 
 # An object with an ID
@@ -85,4 +88,3 @@ type Query {
     ids: [ID!]!
   ): [Node]!
 }
-

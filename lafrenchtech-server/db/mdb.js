@@ -1,14 +1,14 @@
 // flow
 const { ObjectID } = require("mongodb");
 
-function buildFilters({ OR = [], description_contains, url_contains }) {
+function buildFilters({ OR = [], description_contains, sector_contains }) {
   const filter =
-    description_contains || url_contains || check_query ? {} : null;
+    description_contains || sector_contains || check_query ? {} : null;
   if (description_contains) {
     filter.description = { $regex: `.*${description_contains}.*` };
   }
-  if (url_contains) {
-    filter.url = { $regex: `.*${url_contains}.*` };
+  if (sector_contains) {
+    filter.url = { $regex: `.*${sector_contains}.*` };
   }
 
   let filters = filter ? [filter] : [];

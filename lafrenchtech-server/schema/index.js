@@ -43,7 +43,7 @@ const schemaDecl = `
   input CompanyFilter {
     OR: [CompanyFilter!]
     description_contains: String
-    url_contains: String
+    sector_contains: String
   }
 
   type Company implements Node {

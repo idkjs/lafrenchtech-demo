@@ -1,0 +1,17 @@
+{
+  companies(first: 20, after: "20", filter: { sector_contains: "#Health" }) {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+    }
+    edges {
+      node {
+        id
+        name
+        logo
+        employees
+        sector
+      }
+    }
+  }
+}

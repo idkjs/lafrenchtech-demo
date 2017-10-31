@@ -22,13 +22,15 @@ const ListPage = createFragmentContainer(
     </Box>
   ),
   graphql`
-    fragment ListPage_companies on CompanyConnection
-      @connection(key: "ListPage_company") {
-      edges {
-        cursor
-        node {
-          id
-          ...Company_company
+    fragment ListPage_companies on CompanyConnection {
+      companies(first: $count, filter: $sector_contains)
+        @connection(key: "ListPage_company") {
+        edges {
+          cursor
+          node {
+            id
+            ...Company_company
+          }
         }
       }
     }
