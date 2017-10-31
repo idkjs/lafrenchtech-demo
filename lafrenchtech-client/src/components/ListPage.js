@@ -14,7 +14,7 @@ const ListPage = createFragmentContainer(
       <PageTitle>
         Work for one of {props.companies.edges.length}&nbsp;Companies
       </PageTitle>
-      <Flex wrap>
+      <Flex wrap my={4} mx={-2}>
         {props.companies.edges.map(({ node }, index) => (
           <Company key={node.__id} index={index} company={node} />
         ))}
