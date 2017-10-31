@@ -1,13 +1,13 @@
 import React from "react";
 import { createView } from "rrx";
 
-import { createRefetchContainer, graphql } from "react-relay";
+import { createFragmentContainer, graphql } from "react-relay";
 import { Flex, Box } from "rebass";
 import Company from "./Company";
 import PageTitle from "./PageTitle";
 import NavBar from "./NavBar";
 
-const ListPage = createRefetchContainer(
+const ListPage = createFragmentContainer(
   props => (
     <Box>
       <NavBar />

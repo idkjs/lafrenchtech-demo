@@ -24,7 +24,7 @@ const Company = createFragmentContainer(
           {props.company.name}
         </Link>
       </Pre>
-      <Link>Sector: {props.company.sector}</Link>
+      <Link f={0}>Sector: {props.company.sector}</Link>
     </Card>
   ),
   graphql`
