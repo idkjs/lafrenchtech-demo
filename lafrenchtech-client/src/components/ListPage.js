@@ -2,16 +2,24 @@ import React from "react";
 import { createView } from "rrx";
 
 import { createFragmentContainer, graphql } from "react-relay";
-import { Flex, Heading, Lead } from "rebass";
+import { Flex, Box } from "rebass";
 import Company from "./Company";
+import PageTitle from "./PageTitle";
+import NavBar from "./NavBar";
 
 const ListPage = createFragmentContainer(
   props => (
-    <Flex wrap>
-      {props.companies.edges.map(({ node }, index) => (
-        <Company key={node.__id} index={index} company={node} />
-      ))}
-    </Flex>
+    <Box>
+      <NavBar />
+      <PageTitle>
+        Work for one of {props.companies.edges.length}&nbsp;Companies
+      </PageTitle>
+      <Flex wrap>
+        {props.companies.edges.map(({ node }, index) => (
+          <Company key={node.__id} index={index} company={node} />
+        ))}
+      </Flex>
+    </Box>
   ),
   graphql`
     fragment ListPage_companies on CompanyConnection
