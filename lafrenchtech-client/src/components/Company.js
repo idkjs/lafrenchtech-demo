@@ -2,6 +2,7 @@ import React from "react";
 import { createFragmentContainer, graphql } from "react-relay";
 import { createView } from "rrx";
 import { Divider, Box, Image, Link } from "rebass";
+// import Debug from "./Debug";
 
 const Company = createFragmentContainer(
   props => (

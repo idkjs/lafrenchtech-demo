@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "rrx";
+import { createView } from "rrx";
 import { Absolute, Toolbar, Box, NavLink, BlockLink, Image } from "rebass";
 import Hide from "hidden-styled";
 import Tweet from "./Tweet";
@@ -46,4 +46,4 @@ const NavBar = props => (
   </Absolute>
 );
 
-export default NavBar;
+export default createView(NavBar);
