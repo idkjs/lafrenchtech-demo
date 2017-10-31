@@ -10,8 +10,9 @@ require("dotenv").config();
 
 const start = async () => {
   try {
-    const db = await MongoClient.connect(process.env.DB_AZ);
-
+    const db = await MongoClient.connect(process.env.DB_DEV);
+    // const test = await db.collection("companies").findOne();
+    // console.log(test);
     const app = express();
     app.use("*", cors());
     const buildOptions = {

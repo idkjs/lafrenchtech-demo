@@ -57,8 +57,13 @@ const schemaDecl = `
     address: String
     url: String
     jobs: String
+    jobs_link: String
     sector: String
     employees: String
+    twitter: String
+    facebook: String
+    instagram: String
+    youtube: String
   }
 `;
 
@@ -87,17 +92,22 @@ const schema = makeExecutableSchema({
 
     Company: {
       id: globalIdResolver("Company", obj => obj._id),
-      name: obj => obj.Company_Name,
-      logo: obj => obj.Logo_URL,
-      sector: obj => obj.Sector,
-      employees: obj => obj.Employees,
-      tranch: obj => obj.Tranche,
-      description: obj => obj.Description,
-      location: obj => obj.Location,
+      name: obj => obj.company_name,
+      logo: obj => obj.logo,
+      sector: obj => obj.industry,
+      employees: obj => obj.number_employees,
+      tranch: obj => obj.tranche,
+      description: obj => obj.description,
+      location: obj => obj.location,
       address: obj => obj.Adresse,
-      sector: obj => obj.Sector,
-      url: obj => obj.Company_Website,
-      jobs: obj => obj.Job_Offers
+      sector: obj => obj.sector,
+      url: obj => obj.company_url,
+      jobs: obj => obj.job_offers,
+      jobs_link: obj => obj.job_links,
+      twitter: obj => obj.Twitter,
+      facebook: obj => obj.Facebook,
+      instagram: obj => obj.Instagram,
+      youtube: obj => obj.Youtube
     }
   }
 });

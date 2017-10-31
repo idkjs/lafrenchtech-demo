@@ -8,7 +8,7 @@ import { createRouter } from "rrx";
 const AppListPageQuery = graphql`
   query AppListPageQuery($count: Int!, $sector_contains: String) {
     companies {
-      ...ListPage_companies
+      ...ListPage_companies @arguments(sector_contains: $sector_contains)
     }
   }
 `;
