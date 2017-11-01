@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash d405a7a530fe4b388a320ef7e401d2de
+ * @relayHash 4eba83f6ff192d2052ad220ac0e5a13e
  */
 
 /* eslint-disable */
@@ -16,16 +16,15 @@ export type AppListPageQueryResponse = {|
 
 
 /*
-query AppListPageQuery(
-  $sector_contains: String
-) {
+query AppListPageQuery {
   companies {
-    ...ListPage_companies_30DBNc
+    ...ListPage_companies
   }
 }
 
-fragment ListPage_companies_30DBNc on CompanyConnection {
+fragment ListPage_companies on CompanyConnection {
   edges {
+    cursor
     node {
       id
       ...Company_company
@@ -46,14 +45,7 @@ fragment Company_company on Company {
 
 const batch /*: ConcreteBatch*/ = {
   "fragment": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "sector_contains",
-        "type": "String",
-        "defaultValue": null
-      }
-    ],
+    "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
     "name": "AppListPageQuery",
@@ -69,14 +61,7 @@ const batch /*: ConcreteBatch*/ = {
           {
             "kind": "FragmentSpread",
             "name": "ListPage_companies",
-            "args": [
-              {
-                "kind": "Variable",
-                "name": "sector_contains",
-                "variableName": "sector_contains",
-                "type": null
-              }
-            ]
+            "args": null
           }
         ],
         "storageKey": null
@@ -89,14 +74,7 @@ const batch /*: ConcreteBatch*/ = {
   "metadata": {},
   "name": "AppListPageQuery",
   "query": {
-    "argumentDefinitions": [
-      {
-        "kind": "LocalArgument",
-        "name": "sector_contains",
-        "type": "String",
-        "defaultValue": null
-      }
-    ],
+    "argumentDefinitions": [],
     "kind": "Root",
     "name": "AppListPageQuery",
     "operation": "query",
@@ -117,6 +95,13 @@ const batch /*: ConcreteBatch*/ = {
             "name": "edges",
             "plural": true,
             "selections": [
+              {
+                "kind": "ScalarField",
+                "alias": null,
+                "args": null,
+                "name": "cursor",
+                "storageKey": null
+              },
               {
                 "kind": "LinkedField",
                 "alias": null,
@@ -185,7 +170,7 @@ const batch /*: ConcreteBatch*/ = {
       }
     ]
   },
-  "text": "query AppListPageQuery(\n  $sector_contains: String\n) {\n  companies {\n    ...ListPage_companies_30DBNc\n  }\n}\n\nfragment ListPage_companies_30DBNc on CompanyConnection {\n  edges {\n    node {\n      id\n      ...Company_company\n    }\n  }\n}\n\nfragment Company_company on Company {\n  id\n  description\n  url\n  logo\n  name\n  tranch\n  sector\n}\n"
+  "text": "query AppListPageQuery {\n  companies {\n    ...ListPage_companies\n  }\n}\n\nfragment ListPage_companies on CompanyConnection {\n  edges {\n    cursor\n    node {\n      id\n      ...Company_company\n    }\n  }\n}\n\nfragment Company_company on Company {\n  id\n  description\n  url\n  logo\n  name\n  tranch\n  sector\n}\n"
 };
 
 module.exports = batch;
