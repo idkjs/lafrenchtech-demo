@@ -2,7 +2,7 @@ import React from "react";
 import { createView } from "rrx";
 
 import { createFragmentContainer, graphql } from "react-relay";
-import { Flex, Heading, Lead, Box } from "rebass";
+import { Flex, Box } from "rebass";
 import Company from "./Company";
 import PageTitle from "./PageTitle";
 import NavBar from "./NavBar";

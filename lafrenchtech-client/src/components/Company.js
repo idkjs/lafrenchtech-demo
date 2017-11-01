@@ -2,7 +2,6 @@ import React from "react";
 import { createFragmentContainer, graphql } from "react-relay";
 import { createView } from "rrx";
 import { Divider, Image, Link, Pre, Card } from "rebass";
-// import Debug from "./Debug";
 
 const Company = createFragmentContainer(
   props => (
@@ -14,9 +13,7 @@ const Company = createFragmentContainer(
           {props.company.name}
         </Link>
       </Pre>
-      <Link onClick={() => this.props.onClick()} f={0}>
-        Sector: {props.company.sector}
-      </Link>
+      <Link f={0}>Sector: {props.company.sector}</Link>
     </Card>
   ),
   graphql`
